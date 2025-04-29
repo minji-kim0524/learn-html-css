@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블 관련 요소</title>
+    <!-- Favicon 설정하기 -->
+    <!-- <link rel="shortcut icon" href="/public/favicon/likelion.ico" type="image/x-icon" /> -->
+    <link rel="icon" href="/public/favicon/likelion.svg" type="image/svg" />
+    <!-- <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" /> -->
+    <link rel="preload" as="font" href="/public/font/suit/SUIT-Variable.woff2" />
+    <link rel="stylesheet" href="/public/font/suit/SUIT-Variable.css" />
+    <style>
+      body {
+        font-family: 'SUIT Variable', sans-serif;
+      }
+      /* css의 셀렉터(선택자) */
+      .table-1 {
+        /* 선언부(스타일선언, 디클레이션?) */
+        border: 1px solid currentColor;
+
+        th,
+        td {
+          /* css네스팅(중첩) */
+          /* 똑같은 코드를 줄때는 th, td처럼 콤마로 적용함 -> 선택자의 그룹핑 */
+          border: 1px solid currentColor;
+        }
+      }
+      /* 이렇게(.찍고 기재)하면 문서안 클래스속성을 검색함, id속성 기준으로 검색하게하려면 #를 기재 => .은 클래스, #은 id */
+    </style>
+  </head>
+  <body>
+    <h1>테이블 관련 요소</h1>
+    <table class="table-1">
+      <!-- 무조건 행부터 만들어야함 tr(table row) -->
+      <!-- tr안의 th는 큰 틀에서보면 제목셀(열의 이름)이라고 볼 수 있음 -->
+      <tr>
+        <th scope="col">이름</th>
+        <th scope="col">국어</th>
+        <th scope="col">수학</th>
+      </tr>
+      <!-- tr안의 td는 레코드값(table data)을 의미함 -->
+      <tr>
+        <th scope="row">홍길동</th>
+        <td>80</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <th scope="row">이영희</th>
+        <td>70</td>
+        <td>100</td>
+      </tr>
+    </table>
+    <br />
+    <a href="/index.html">메인 페이지로 이동</a>
+    <br />
+    <table>
+      <caption class="sr-only">
+        입문자를 위한 Git과 HTML&CSS 과정
+        <span>학습시간, 난이도, 교육비 지원, 평가항목, 수료기준, 정원, 교재 정보 등을 나타낸 표</span>
+      </caption>
+      <tr>
+        <th scope="row">학습시간</th>
+        <td>09:00 ~ 17:00 (28시간)</td>
+        <th scope="row">난이도</th>
+        <td>초급</td>
+      </tr>
+      <tr>
+        <th scope="row">교육비 지원</th>
+        <td>고용보험 비환급</td>
+        <th scope="row">평가항목</th>
+        <td>출석률 100%</td>
+      </tr>
+      <tr>
+        <th scope="row">수료기준</th>
+        <td>총점 80점 이상시 수료</td>
+        <th scope="row">정원</th>
+        <td>24명</td>
+      </tr>
+      <tr>
+        <th scope="row">교재정보</th>
+        <td colspan="3">
+          <p>
+            입문자를 위한 GIT과 HTML&CSS<br />
+            HTML&CSS 웹사이트 개발과 디자인 기초(35,000원)
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
