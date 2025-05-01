@@ -1,0 +1,40 @@
+/* 상속, 겹침, 우선순위 */
+/* 상속 */
+.wrapper {
+  color: green;
+  border: 1px solid blue;
+}
+
+.wrapper {
+  border: inherit;
+  color: purple;
+}
+p.ai {
+  color: purple;
+}
+
+.ai {
+  color: red;
+}
+
+p {
+  color: gray;
+}
+
+p {
+  color: orange;
+}
+
+p {
+  color: pink !important;
+}
+
+/* 상속으로 인한 겹침 */
+body {
+  color: red;
+}
+
+/* 선택자의 우선순위로 인한 겹침 */
+/* 동일선택자에 선언이 겹쳐지면(선언순서가 다른경우) 가장 나중에 선언한게 우선됨 */
+/* 선택자마다 가중치가 있고, 가중치는 누가 더 구제척이냐에 따라 정해짐. 홍길보단 한국에 사는 홍길동이 더 구체적 / 
+예를 들자면 클래스의 가중치는 10, 요소는 1임 -> 위쪽에 선언이 됐어도 우선적용됨 / id는 가중치가 100임 */
