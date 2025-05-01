@@ -1,0 +1,13 @@
+/* 본문(body)요소에 배경색상 지정하기 */
+body {
+  background-color: hsla(110, 50%, 50%, 0.5);
+}
+
+/* 제목요소에 글자크기 지정하기 */
+/* h1은 id나 class가 없으므로 태그이름으로만 끌어와서 설정할 수 있음 */
+h1 {
+  font-size: small;
+  border-width: 10px;
+  border-style: solid;
+  border-color: currentColor;
+}
