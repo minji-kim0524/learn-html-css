@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼(input) 요소</title>
+    <link rel="shortcut icon" href="/public/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/public/favicon/likelion.svg" type="image/svg" />
+    <link rel="preload" as="font" href="/public/font/suit/SUIT-Variable.woff2" />
+    <link rel="stylesheet" href="/public/font/suit/SUIT-Variable.css" />
+    <style>
+      body {
+        font-family: 'SUIT Variable', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>폼(input) 요소</h1>
+    <form action="https://formspree.io/f/xeqwwbwk" method="POST">
+      <!-- 한줄 글상자(검색어, search) - 검색어 입력서식 -->
+      <!-- text : 텍스트입력서식(이름,id등 입력) -->
+      <!-- 폼 관련 요소는 모두 1대1로 대응되는 레이블을 가져야함 -->
+      <div>
+        <!-- 레이블이 input id로 판단하여 짝을 지어줌(포커싱이 됨) -->
+        <label for="userName">이름</label>
+        <input type="text" id="userName" name="userName" />
+      </div>
+      <!-- password : 비밀번호 입력서식 -->
+      <div><label for="userPassword">비밀번호</label><input required type="password" name="userPassword" id="userPassword" /></div>
+      <!-- search : 검색어입력서식 (HTML5에서 추가된 방법)-->
+      <div>
+        <label for="searchKeyword">검색어</label>
+        <input type="search" id="searchKeyword" placeholder="검색어를 입력하세요" name="keyword" />
+      </div>
+      <div>
+        <!-- tel : 전화번호 입력서식 (HTML5에서 추가된 방법) -->
+        <div><label for="tel">전화번호</label><input required type="tel" name="userTel" id="userTel" /></div>
+        <!-- email : 이메일 입력서식 (HTML5에서 추가된 방법) -->
+        <div><label for="userEmail">이메일</label><input required type="email" name="userEmail" id="userEmail" /></div>
+
+        <!-- checkbox : 체크박스타입 -->
+        <input type="checkbox" checked name="classRoom" value="html" name="likiLionHtml" id="likiLionHtml" />
+        <label for="likiLionHtml">HTML</label>
+      </div>
+      <div>
+        <!-- checkbox : 체크박스타입 -->
+        <input type="checkbox" value="css" name="likiLionCss" id="likiLionCss" />
+        <label for="likiLionCss">CSS</label>
+      </div>
+      <!-- radio : 라디오 서식(컨트롤) -->
+      <div>
+        <label><input type="radio" checked name="classRoom" name="classRoom" value="classRoom1" /> 회고 1팀</label>
+      </div>
+      <div>
+        <label><input type="radio" name="classRoom" value="classRoom2" /> 회고 2팀</label>
+      </div>
+      <div>
+        <!-- 버튼(submit) 검색버튼 -->
+        <!-- 세가지는 동일한 버튼타입임(축약어개념임 b/btn/button) -->
+        <input type="submit" value="전송" />
+        <input type="reset" value="초기화" />
+        <input type="button" value="버튼" />
+      </div>
+    </form>
+    <a href="/index.html">메인 페이지 이동</a>
+    <br />
+  </body>
+</html>
