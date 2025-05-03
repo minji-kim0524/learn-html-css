@@ -1,0 +1,44 @@
+/* 배경색상 및 배경이미지 */
+body {
+  /* rgba() 함수로 배경색상 적용하기 */
+  background-color: rgba(255, 255, 180, 0.8);
+  background-image: url(/src/assets/images/sun.png), url(/src/assets/images/cloud.png), url('/src/assets/images/tree.png');
+  background-repeat: no-repeat;
+  /* background-position: x축 이동값, y축 이동값 기재하면 위치이동됨 */
+  background-position:
+    200px 150px,
+    50px 150px,
+    50px 200px;
+  /* background-size : 가로값 세로값 입력(기본값은 auto, url에 넣은 이미지의 본래크기로 적용됨) */
+  background-size:
+    100px,
+    auto,
+    300px 500px;
+  background-attachment: fixed;
+}
+
+a {
+  /* display: inline-block;
+  border: 1px solid currentColor;
+  padding: 10px 20px;
+  background-color: hsla(110, 50%, 50%, 0.5); */
+  /* background-color에서 마지막 0.5부분은 생략가능하며, 생략하면 기본값인 1(불투명)이 적용된다. */
+  /* background-image: url('/src/assets/thumbnail/external-link.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 14px;
+  background-attachment: fixed; */
+
+  background: hsla(110, 50%, 50%, 0.5) url('/src/assets/thumbnail/external-link.png') no-repeat 0 50% /14px;
+}
+
+h1 {
+  /* rgb() 함수로 배경색상 적용하기 */
+  background-color: rgb(255 160 255 /0.7);
+  padding: 5px 100px;
+  font-size: 20px;
+  background-image: url('/src/assets/thumbnail/new.png');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: contain;
+}
