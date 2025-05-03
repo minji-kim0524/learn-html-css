@@ -1,0 +1,59 @@
+/* 박스 모델 */
+/* block box */
+/* border 스타일링 */
+/* padding(안쪽여백) 스타일링 */
+.lion {
+  box-sizing: border-box;
+  background-color: #ffc;
+  border: 1px solid #333;
+  padding: 10px;
+  width: 500px;
+
+  /* border-top-width: 1px;
+  border-block-start-width: 1px;
+  두개씩 동일한 결과값을 나타냄
+
+  border-right-width: 5px;
+  border-inline-end-width: 5px;
+
+  border-bottom-width: 10px;
+  border-block-end-width: 10px;
+
+  border-left-width: 15px;
+  border-inline-start-width: 15px; */
+
+  span {
+    background-color: #fcf;
+    display: block;
+    width: 5em;
+  }
+}
+
+/* inline box */
+.like {
+  background-color: #ccc;
+  display: inline;
+  width: 5em;
+}
+
+/* inline-block box */
+.bootcamp {
+  background-color: #cfc;
+  display: inline-block;
+  width: 300px;
+}
+
+/* margin(바깥여백) 스탕릴링 */
+.school {
+  border: 1px solid orange;
+  margin: 10px;
+}
+
+/* overflow속성을 활용한 스타일링 */
+.techit {
+  border: 1px solid green;
+  padding: 10px;
+  margin: 10px;
+  height: 120px;
+  overflow: scroll;
+}
