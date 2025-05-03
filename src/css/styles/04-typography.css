@@ -1,0 +1,59 @@
+/* 타이포그래피 및 단위 */
+/* 규칙은 항상 제일먼저 선언해야함. 중간에 명시하면 안됨 */
+@import '/src/common/mini-reset.css';
+
+/* html {
+  font-size: 10px;
+
+  @media (width > 600px) {
+    font-size: 20px;
+  }
+  @media (width > 1200px) {
+    font-size: 30px;
+  }
+} */
+
+:root {
+  font-size: 10px;
+}
+
+/* html 설정내용은 모든 디바이스에 적용됨 */
+
+/* 글자크기설정(font-size) */
+/* 글자크기를 지정하지않았을 경우 기본값은 16px임 */
+/* em은 현재크기(or 상속받은크기)에 비례해서 계산함 */
+
+.lion {
+  font-size: 10px;
+
+  .like {
+    font-size: 1.5em;
+    color: orange;
+  }
+}
+
+/* rem은 root를 기준으로 글자크기를 계산함 */
+
+.bootcamp {
+  font-size: 20px;
+
+  .like {
+    font-size: 2rem;
+    color: blue;
+    line-height: 1.5;
+  }
+}
+
+/* vw는 뷰포트를 기준으로 글자크기를 계산함 -> 반응형폰트임 */
+.school {
+  font-weight: 700;
+
+  .like {
+    font-size: 5vw;
+    color: green;
+
+    em {
+      font-style: oblique;
+    }
+  }
+}
