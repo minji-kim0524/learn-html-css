@@ -7,7 +7,7 @@
 
   .term-wrapper {
     background-color: pink;
-    margin-right: 76px;
+    margin-left: 76px;
   }
 
   .term-subject {
@@ -27,6 +27,6 @@
     background: lime;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
   }
 }
