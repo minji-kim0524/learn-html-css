@@ -1,32 +1,65 @@
 /* 웹 관련 용어 - position 예제 */
+body {
+  margin: 50px;
+}
+
+/* 용어 컴포넌트 스타일 */
 .term {
   /* 단축표기법 */
-  background: #ffc;
+  /* background: #ffc; */
+  padding-left: 76px;
   position: relative;
-  width: 30%;
+  /* width: 30%; / 주로 auto나 100%를 쓰는것을 추천함 */
+  min-height: 68px;
+  margin-bottom: 12px;
 
-  .term-wrapper {
-    background-color: pink;
-    margin-left: 76px;
-  }
-
-  .term-subject {
+  em {
     color: #296897;
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1.5;
   }
 
-  .term-brief {
+  p {
     font-size: 0.875rem;
     line-height: 1.5;
     color: #181818;
   }
 
-  .term-thumbnail {
-    background: lime;
+  img {
+    /* background: lime; */
     position: absolute;
     top: 0;
     left: 0;
+  }
+}
+
+/* 용어 섹션 스타일링 */
+.term-section {
+  background: #ccc linear-gradient(#ccc, #eee);
+  border: 1px solid #555;
+  border-radius: 0.5rem;
+  /* border-radius 를 박스크기보다 크게줄 수도 있음 
+  -> 그정도크기까지 박스를 키울때를 대비해서 더 크게 설정하기도함 */
+  padding: 16px;
+  width: 260px;
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .term {
+    margin-top: 16px;
+
+    &:nth-of-type(even) {
+      /* padding-left: 0;
+      padding-right: 68px; */
+      padding-inline: 0 68px;
+
+      img {
+        left: initial;
+        right: 0;
+      }
+    }
   }
 }
