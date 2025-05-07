@@ -1,0 +1,31 @@
+/* CSS Float */
+.bootcamp {
+  display: flow-root;
+  border: 1px solid red;
+  /* height는 컨텐츠요소에 따라 결정됨(기본값이 auto임) */
+  /* overflow: hidden; */
+  margin: 50px;
+
+  img {
+    width: 150px;
+    border: 1px solid green;
+  }
+
+  .tree {
+    float: right;
+    top: -30px;
+  }
+
+  .rabbit {
+    float: left;
+    left: -50px;
+  }
+
+  p {
+    background-color: #ffc;
+  }
+
+  /* .lion {
+    clear: both;
+  } */
+}
