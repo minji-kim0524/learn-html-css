@@ -1,0 +1,32 @@
+/* 웹 관련 용어 - position 예제 */
+.term {
+  /* 단축표기법 */
+  background: #ffc;
+  position: relative;
+  width: 30%;
+
+  .term-wrapper {
+    background-color: pink;
+    margin-right: 76px;
+  }
+
+  .term-subject {
+    color: #296897;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .term-brief {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #181818;
+  }
+
+  .term-thumbnail {
+    background: lime;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
