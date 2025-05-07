@@ -1,0 +1,65 @@
+/* CSS Position */
+/* body태그부터 전체 태그를 기준으로 순서가 결정됨 */
+/* p.lion:nth-child(6) {
+  border: 1px solid green;
+} */
+
+/* p태그 내에서만 순서를 적용함 */
+
+/* p.lion:nth-of-type(2) {
+  border: 1px solid red;
+  background-color: rgb(255 255 80 /0.5);
+  position: relative;
+
+  /* /* inset-block-start:  */
+/* top: 50px; */
+
+/* inset-inline-end:  */
+/* right: */
+
+/* inset-block-end: */
+/* bottom:  */
+
+/* inset-inline-start: */
+/* left: 100px; */
+/* }  */
+
+/* relative값을 적용한 경우 -> 부모요소의 색위에 자식요소의 색이 겹쳐짐, 요소박스의 원래위치를 기준으로 배치됨 */
+.like {
+  background-color: #000;
+
+  p {
+    border: 1px solid red;
+    background-color: rgb(255 255 80 /0.5);
+    position: relative;
+    bottom: 20px;
+    right: 10px;
+  }
+}
+
+/* fixed값을 적용한 경우 -> 주변블록에 영향을 줌, 화면에서 자기영역을 차지하지않음, 영역의 시작점은 인식함, 
+layer로 떠있음->떠있으려면 width와 height가 필요한데, 준적이 없을 경우 text크기만큼 자동으로 계산함, 성향은 block임(BFC) */
+/* fixed는 뷰포트를 기준으로 배치됨 */
+h1 {
+  background-color: pink;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+/* absolute값을 적용한 경우 -> 주변의 배치위치에 영향을 줌 */
+/* 자신의 컨테이닝 블록을 기준으로 배치됨, 자신을 포함하고있는 컨테이너(예시기준으로는 p임) */
+/* 자신의 컨테이닝 블록이 static이면 기준으로 삼지않고, static이 아닌 상위로 기준을 찾아 올라감 */
+/* 자신과 가장 가까운 컨테이너중에서 static이 아닌 것을 기준으로 잡음 */
+.bootcamp {
+  border: 1px solid blue;
+  position: relative;
+
+  span {
+    background-color: rgb(100 255 30 /0.5);
+    border: 1px solid black;
+    position: absolute;
+    top: 20px;
+    left: 0;
+  }
+}
