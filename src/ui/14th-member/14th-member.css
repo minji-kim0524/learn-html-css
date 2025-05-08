@@ -1,0 +1,93 @@
+/* 테이블 스타일링 */
+:root {
+  --black: #121212;
+  --white: #ffff;
+}
+
+body {
+  margin: 50px;
+  color: var(--black);
+}
+
+/* h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.table-styling {
+  border: 1px solid black;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+}
+
+thead,
+tfoot {
+  background: black;
+  color: white;
+}
+
+tbody tr {
+  &:nth-of-type(even) {
+    background-color: var(--gray);
+  }
+} */
+
+.table-wrapper {
+  /* background: var(--yellow); */
+  height: 500px;
+  /* block-size 와 height는 같은 의미 */
+  overflow: auto;
+
+  table {
+    border: 1px solid currentColor;
+    /* width: 100%는 부모의 크기만큼이라는 의미임 */
+    /* width: 100%; */
+    inline-size: 100%;
+    /* 논리속성을 적용할 경우에는 inline-size가 적용되는데 순서를 꼭 width다음에 써줘야함 */
+    border-spacing: 0;
+    /* border-spacing은 table에서만 사용함 */
+    border-collapse: collapse;
+  }
+
+  /* 열별로 열너비지정하는 법, 화면크기를 조절하면 거기에 맞춰서 변경됨(반응형) */
+  .number {
+    inline-size: 10%;
+  }
+  .name {
+    inline-size: 20%;
+  }
+  .email {
+    inline-size: 30%;
+    /* border: 1px solid red; */
+  }
+  .phone {
+    inline-size: 40%;
+  }
+
+  thead,
+  tfoot {
+    color: var(--white);
+    background: var(--black);
+  }
+
+  thead {
+    position: sticky;
+    top: 0;
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--gray);
+  }
+
+  th,
+  td {
+    /* border: 1px solid currentColor; */
+    padding: 1em;
+  }
+
+  td {
+    text-align: center;
+    /* 들여쓰기효과를 주고싶다면 padding 사용 */
+  }
+}
