@@ -1,0 +1,29 @@
+/* CSS 변수 */
+@property --text-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #f0c;
+}
+
+:root {
+  --red: #f00;
+  --green: #0f0;
+  --blue: #00f;
+}
+
+body {
+  margin: 50px;
+  background: #ffc;
+}
+
+a {
+  color: var(--text-color);
+
+  span {
+    color: var(--blue);
+  }
+}
+
+/* h1 {
+  box-shadow: 5px 5px 5px 5px;
+} */
