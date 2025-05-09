@@ -63,3 +63,10 @@ h1 {
     left: 0;
   }
 }
+
+/* sticy값을 적용한 경우 */
+.frontend {
+  background: var(--mint);
+  position: sticky;
+  top: 0;
+}
