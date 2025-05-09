@@ -1,0 +1,60 @@
+body {
+  padding: 50px;
+}
+
+.notification {
+  background: #f4f6f8;
+  margin: 40px;
+  padding: 40px;
+  border: 1px solid #ccc;
+  width: 412px;
+
+  li {
+    border: 1px solid #ccc;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 332px;
+    /* position: relative; */
+
+    img {
+      float: left;
+      margin-block-start: 8px;
+    }
+
+    p {
+      color: #9b9a90;
+      margin-top: 4px;
+      margin-left: 48px;
+      font-size: 14px;
+    }
+
+    .plant,
+    .plant-time {
+      color: #22be61;
+      font-weight: 700;
+    }
+
+    .plant,
+    .cooking {
+      margin-right: 136px;
+      margin-left: 20px;
+      font-size: 18px;
+    }
+
+    .plant-time,
+    .cooking-time {
+      font-size: 11px;
+    }
+
+    .cooking,
+    .cooking-time {
+      color: #e39042;
+      font-weight: 700;
+    }
+  }
+
+  li:nth-of-type(2) {
+    margin-top: 12px;
+  }
+}
