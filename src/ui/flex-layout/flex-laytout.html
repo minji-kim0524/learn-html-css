@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>플렉스 레이아웃(스크롤 없는 100% 레이아웃)</title>
+    <link rel="shortcut icon" href="/public/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/public/favicon/likelion.svg" type="image/svg" />
+    <link rel="preload" as="font" href="/public/font/suit/SUIT-Variable.woff2" />
+    <link rel="stylesheet" href="/public/font/suit/SUIT-Variable.css" />
+    <link rel="stylesheet" href="/src/common/index.css" />
+    <link rel="stylesheet" href="/src/ui/flex-layout/flex-layout.css" />
+  </head>
+  <body>
+    <div class="sr-only">
+      <br />
+      <a href="/index.html">메인 페이지 이동</a>
+      <h1>플렉스 레이아웃(스크롤 없는 100% 레이아웃)</h1>
+    </div>
+    <div class="container">
+      <div role="banner" class="header">헤더</div>
+      <div role="navigation" class="navigation">내비케이션</div>
+      <div class="wrapper">
+        <div role="complementary" class="sidebar">사이드바</div>
+        <div role="main" class="main-content">메인 콘텐츠</div>
+      </div>
+      <div role="contentinfo" class="footer">푸터</div>
+    </div>
+
+    <!-- 위 마크업을 시맨틱마크업으로 바꾼 예시 -->
+    <!-- <div class="container">
+      <header class="header">header</div>
+      <nav class="navigation">nav</div>
+      <aside class="sidebar">aside</div>
+      <main class="main-content">main</div>
+      <footer class="footer">footer</div>
+    </div> -->
+  </body>
+</html>
