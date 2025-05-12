@@ -1,0 +1,41 @@
+/* CSS 논리속성 및 논리값 */
+body {
+  margin: 50px;
+}
+
+/* inline-size & block-size 예제 */
+.lion {
+  writing-mode: horizontal-tb;
+  background: var(--yellow);
+  /* inline-size는 width의 논리속성으로 wirting-mode를 변경해도 각각에 맞춰 사이즈 유지가됨 */
+  inline-size: 500px;
+  /* block-size는 height의 논리속성 */
+  block-size: 300px;
+}
+
+/* inset 예제 */
+.like {
+  background: var(--coral);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  inset-block-start: 40px;
+  inset-inline-end: 40px;
+  /* 0값과 initial값은 다름 */
+  inset: 80px 80px initial initial;
+}
+
+/* block-start & inline-start, block-end & inline-end, start & end */
+.bootcamp {
+  background: var(--green);
+  text-align: right;
+  /* text-alingn 속성에서 start가 left의 논리속성, end가 right의 논리속성값임 */
+  text-align: start;
+
+  span {
+    background: var(--orange);
+    float: right;
+    /* inline-start는 float:left의 논리속성임, inline-end는 float:right의 논리속성임 */
+    float: inline-end;
+  }
+}
