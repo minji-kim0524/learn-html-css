@@ -49,7 +49,7 @@ body {
   /* display: flex; */
 
   label {
-    display: iblock;
+    display: inline-block;
     /* min-width: 4em; */
     /* margin-right: 0.5em; */
   }
