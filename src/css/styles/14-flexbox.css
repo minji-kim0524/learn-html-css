@@ -1,0 +1,144 @@
+/* CSS Flex */
+body {
+  margin: 50px;
+}
+
+/* 상자별로 서로 다른 색상 지정하는 방법 */
+div {
+  div:nth-child(1) {
+    background: var(--yellow);
+  }
+  div:nth-child(2) {
+    background: var(--coral);
+  }
+  div:nth-child(3) {
+    background: var(--mint);
+  }
+  div:nth-child(4) {
+    background: var(--blue);
+  }
+}
+
+/* flex를 활용할 경우 */
+/* item들을 배치하면서 주변의 배치에 영향을 주지않음 */
+.lion {
+  inline-size: 50%;
+  block-size: 200px;
+  margin-block: 20px;
+  box-shadow: 0 0 0 10px red;
+  display: flex;
+  /* 아래 내용은 생략하게되면 기본값(row)으로 적용됨 */
+  flex-direction: row;
+  /* flex-wrap: wrap는 줄바꿈을 허용한다는 의미 */
+  /* flex-wrap: wrap; */
+  /* flex-flow는 direction과 wrap을 합친 단축표기법임 */
+  flex-flow: row nowrap;
+
+  /* 보통쓰는 기본값 세트 */
+  /* display: flex; */
+  /* flex-flow: row nowrap; */
+
+  /* flex-end와 end(논리값)는 동일, flex-start와 start(논리값)는 동일 */
+  /* justify-content: space-evenly; */
+  /* justify-content: space-evenly와 아래 코드가 동일한 결과값을 나타냄 */
+  /* padding: 0 20px;
+  justify-content: space-between; */
+  /* 교차축 정렬 */
+  align-items: center;
+  /* 여러줄 교차축 정렬 */
+  /* align-content: space-around; */
+
+  .lion-item {
+    /* inline-size: 100px; */
+    block-size: 80px;
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
+    flex-basis: 150px;
+    flex: 1 1 0;
+  }
+
+  .lion-item:nth-child(1) {
+    flex-grow: 1;
+  }
+  .lion-item:nth-child(2) {
+    flex-grow: 2;
+  }
+  .lion-item:nth-child(3) {
+    flex-grow: 3;
+  }
+  .lion-item:nth-child(4) {
+    flex-grow: 4;
+    /* flex-shrink: 2; */
+  }
+}
+
+/* float를 활용할 경우 */
+/* float는 자기자신을 움직이면서 주변의 배치에 영향을 줌 */
+.like {
+  margin-block: 20px;
+  box-shadow: 0 0 0 10px blue;
+  display: flow-root;
+
+  .like-item {
+    /* background: pink; */
+    float: inline-end;
+  }
+}
+
+/* Normal Flow 레이아웃 */
+.bootcamp {
+  margin-block: 20px;
+  box-shadow: 0 0 0 10px green;
+  block-size: 200px;
+  inline-size: 400px;
+  /* 가로정렬 */
+  text-align: center;
+  /* 세로정렬(트릭) */
+  /* line-height: 200px; */
+  /* 세로정렬 */
+  align-content: center;
+
+  /* div {
+    position: absolute;
+    inset: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+    inline-size: 350px;
+    block-size: 20px;
+  } */
+}
+
+.frontend {
+  margin-block: 40px;
+  box-shadow: 0 0 0 10px gray;
+  inline-size: 500px;
+  block-size: 200px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: baseline;
+  column-gap: 20px;
+
+  .frontend-item {
+    inline-size: 100px;
+  }
+
+  .frontend-item:nth-child(1) {
+    block-size: 20px;
+    font-size: 12px;
+    align-self: start;
+    order: 9999;
+  }
+  .frontend-item:nth-child(2) {
+    block-size: 40px;
+    font-size: 20px;
+  }
+  .frontend-item:nth-child(3) {
+    block-size: 60px;
+    font-size: 30px;
+  }
+  .frontend-item:nth-child(4) {
+    block-size: 80px;
+    font-size: 40px;
+    order: -1;
+  }
+}
