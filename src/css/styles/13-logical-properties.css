@@ -15,14 +15,14 @@ body {
 
 /* inset 예제 */
 .like {
-  background: var(--coral);
+  background: var(--blue);
   position: fixed;
   top: 20px;
   right: 20px;
   inset-block-start: 40px;
   inset-inline-end: 40px;
   /* 0값과 initial값은 다름 */
-  inset: 80px 80px initial initial;
+  inset: 80px 80px auto auto;
 }
 
 /* block-start & inline-start, block-end & inline-end, start & end */
@@ -33,7 +33,7 @@ body {
   text-align: start;
 
   span {
-    background: var(--orange);
+    background: var(--coral);
     float: right;
     /* inline-start는 float:left의 논리속성임, inline-end는 float:right의 논리속성임 */
     float: inline-end;
