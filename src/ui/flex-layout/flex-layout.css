@@ -16,7 +16,7 @@ body {
   .header,
   .navigation,
   .footer {
-    /* inline-size: 100%; */
+    inline-size: 100%;
   }
 
   .header,
