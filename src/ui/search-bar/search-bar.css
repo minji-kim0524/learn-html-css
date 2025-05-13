@@ -1,0 +1,196 @@
+:root {
+  --green-100: #03cc5c;
+  --green-200: #1bf008;
+  --green-300: #03cca8;
+
+  --gray-100: #bcc3c7;
+  --gray-200: #9b9a90;
+  --gray-300: #6d7478;
+
+  --start-color: var(--green-200);
+  --end-color: var(--green-300);
+
+  --size: 2.125rem;
+}
+
+/* 폼스타일링 (검색바) */
+body {
+  margin: 3.125rem;
+}
+
+/* 컴포넌트 스타일링 */
+/* 텍스트 로고 */
+.text-logo {
+  /* background: yellow; */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* width: calc(1em - .25rem); */
+
+  .text {
+    text-transform: uppercase;
+    font-size: var(--size);
+    line-height: 0.75;
+    font-weight: 900;
+    font-family: Montserrat, sans-serif;
+    background: pink;
+    /* vertical-align: top; */
+
+    background-image: linear-gradient(var(--start-color), var(--end-color));
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* 입력서식 스타일링 */
+.form-input {
+  /* background: yellow; */
+  font-size: 30px;
+  line-height: 1.3;
+  font-weight: 500;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.75rem;
+
+  label {
+    flex-shrink: 0;
+  }
+
+  input {
+    min-inline-size: 0;
+    flex-grow: 1;
+    border: 1px solid #aaa;
+    block-size: 2rem;
+    padding-inline: 0.5em;
+    border-radius: 8px;
+
+    /* &[readonly] {
+      background-color: #ccc;
+    } */
+
+    /* 위의 readonly속성으로 적용했을때와 동일(:read-only는 해당 상태임을 의미) */
+    &:read-only {
+      background-color: #ccc;
+    }
+
+    /* &[placeholder] {
+      color: red;
+    } */
+  }
+}
+
+/* 비활성화 버튼 스타일링 */
+button[disabled],
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* 상태디자인 스타일링 */
+.like-lion {
+  /* box-shadow: 0 0 0 10px red; */
+  padding: 10px;
+  border: 1px solid #aaa;
+
+  &:has(:focus) {
+    background: lime;
+  }
+
+  /* 부모가 아닌 안에있는 자식요소를 클릭했을 시 */
+  /* &:focus-within {
+    background: yellow;
+  } */
+
+  /* 입력서식 마우스오버시(hover), 키브드로 접근시(focus) */
+  input:hover {
+    background: pink;
+  }
+
+  input:focus {
+    /* 포커스시 아웃라인을 제거하는 css코드(값이 0임) */
+    outline: 0;
+  }
+
+  /* visible은 키보드로 접근했을때까지를 고려하여 디자인을 적용함 */
+  /* visible에 border를 쓰지않고 outline을 쓰는 이유는 상자 레이아웃에 영향을 주지않기 때문임. border는 레이아웃에 영향을 미침 -> 사용X */
+  input:focus-visible {
+    /* outline: 2px solid green; */
+    box-shadow: 0 0 1px 2px green;
+  }
+}
+
+/* 버튼 스타일링(원형 그라이언트 버튼) */
+.circle-button {
+  --size: 1.5rem;
+
+  border: 0;
+  padding: 0;
+  background: yellow;
+  inline-size: var(--size);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, var(--end-color), var(--start-color));
+  /* background-image: linear-gradient(var(--start-color), var(--end-color)); */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: '';
+    /* 여기서 50%의 기준은 부모요소임 */
+    inline-size: 40%;
+    block-size: 40%;
+    background: #fff;
+    border-radius: inherit;
+  }
+}
+
+/* 검색바(폼 스타일링) */
+.search-bar {
+  /* background: yellow; */
+  border: 2px solid var(--green-100);
+  padding: 0.75rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 0.75rem;
+  border-radius: 6.25rem;
+  /* justify-content: space-evenly; */
+
+  &:focus-within {
+    box-shadow: 0 2px 2px 1px var(--gray-100);
+  }
+
+  a,
+  button {
+    flex-shrink: 0;
+  }
+
+  a {
+    margin-inline-start: 0.5rem;
+  }
+
+  form {
+    display: contents;
+  }
+
+  .form-input {
+    flex-grow: 1;
+
+    input {
+      border: 0;
+      outline: 0 none;
+      font-weight: 700;
+      appearance: textfield;
+
+      /* &::-webkit-search-cancel-button {
+        display: none;
+      } */
+    }
+  }
+
+  button {
+    margin-inline-start: 0.25rem;
+  }
+}
