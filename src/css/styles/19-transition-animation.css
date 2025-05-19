@@ -1,0 +1,36 @@
+/* CSS 애니메이션 */
+body {
+  margin: 50px;
+}
+
+/* Transition 애니메이션 */
+.like {
+  border: 5px solid currentColor;
+  inline-size: 200px;
+  aspect-ratio: 1;
+  /* width: 500px;
+  padding-top: 50%; */
+  background: yellow;
+  text-align: center;
+  align-content: center;
+  /* 시작의 위치에 애니메이션 효과를 지정해줘야함 */
+  transition-property: background, border-radius, inline-size;
+  /* duration은 지속시간이며, 시간단위임(property와 함께 필수요소임) */
+  transition-duration: 1000ms, 2000ms, 1s;
+  transition-delay: 0ms, 1000ms, 0s;
+  /* timing-function : 가속과 감속을 설정하는 것 */
+  transition-timing-function: linear;
+  /* 단축표기법 */
+
+  /* &:hover {
+    background: pink;
+    border-radius: 50%;
+    inline-size: 300px;
+  } */
+
+  &.transition {
+    background: pink;
+    border-radius: 50%;
+    inline-size: 300px;
+  }
+}
