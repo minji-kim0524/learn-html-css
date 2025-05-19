@@ -9,6 +9,8 @@
   --gray-200: #9b9a90;
   --gray-300: #6d7478;
 
+  --blue-100: #e9f0fd;
+
   --start-color: var(--green-200);
   --end-color: var(--green-300);
 }
@@ -24,7 +26,8 @@
 
 /* 로고(svg) */
 .logo {
-  --size: 230px;
+  --size: clamp(164px, 71.3%, 230px);
+  /* --size: 230px; */
 
   /* background: skyblue; */
   display: inline-flex;
@@ -249,32 +252,27 @@
 
 /* 네이버 로그인 폼 스타일링 */
 .login-container {
-  /* background: yellow; */
   padding-inline: 1.25rem;
 
   @media (min-width: 768px) {
     inline-size: 500px;
     margin-inline: auto;
-    /* background: coral; */
   }
 
   .logo {
-    --size: 164px;
+    /* --size: 164px; */
 
-    /* background: pink; */
+    display: flex;
     margin-inline: auto;
-    /* 모바일퍼스트로 시안을 먼저 작성 */
     margin-block-start: 70px;
     margin-block-end: 45px;
-    display: flex;
 
-    @media (width >= 768px) {
-      --size: 230px;
+    @media (min-width: 768px) {
+      /* --size: 230px; */
 
-      /* 모바일퍼스트 설정 후 미디어쿼리로 데스크탑경우 설정 */
       margin-block-start: 100px;
       margin-block-end: 50px;
-      /* inline-size: clamp(164px, 71.3%, 230px); */
+      /* inline-size: clamp(164px, 71.3% , 230px); */
     }
   }
 
@@ -284,16 +282,15 @@
     row-gap: 10px;
 
     .form-input input {
-      block-size: 48px;
+      block-size: 3rem;
     }
 
     .checkbox-wrapper {
-      background: yellow;
-      /* margin-block-start: 0.625rem; */
       order: 1;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      column-gap: 6px;
 
       @media (max-width: 768px) {
         justify-content: end;
@@ -312,5 +309,26 @@
     .button {
       block-size: 52px;
     }
+  }
+
+  /* 상태 디자인 */
+  :focus {
+    outline: 0 none;
+  }
+
+  .form-input input:focus-visible {
+    border: 1px solid var(--green-100);
+    background: var(--blue-100);
+  }
+
+  .button:focus-visible {
+    box-shadow: 0 0 1px 2px #f00;
+  }
+
+  .checkbox-wrapper *:focus-visible {
+    /* box-shadow: 0 0 1px 2px var(--green-100); */
+    outline: 2px solid var(--green-100);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
