@@ -1,0 +1,50 @@
+body {
+  margin: 50px;
+}
+
+/* 멀티컬럼 레이아웃 */
+.container {
+  margin-block-start: 20px;
+
+  div {
+    padding: 10px;
+  }
+
+  strong {
+    display: inline-block;
+    margin-block-end: 10px;
+  }
+}
+
+/* 단의 너비를 지정한 경우 */
+.like {
+  background: yellow;
+  column-width: 200px;
+  column-rule: 2px dotted black;
+}
+
+/* 단의 갯수를 지정한 경우 */
+.lion {
+  background: pink;
+  column-count: 2;
+  column-rule: 1px solid darkblue;
+  column-gap: 2em;
+}
+
+/* 단의 너비와 갯수를 지정한 경우 */
+.bootcamp {
+  background: lightgreen;
+  /* 여기서 설정한 200px은 최소크기라고 보면됨 */
+  columns: 200px 2;
+
+  span {
+    font-size: 1.5rem;
+    color: orangered;
+    background: white;
+    display: block;
+    column-span: all;
+    margin-block: 0.5em;
+    text-align: center;
+    font-weight: bold;
+  }
+}
