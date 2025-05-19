@@ -1,0 +1,181 @@
+/* 키프레임 애니메이션 */
+body {
+  margin: 50px;
+}
+
+/* 키프레임 규칙선언 */
+/* keyframes 다음은 키프레임이름 작성 */
+@keyframes zoom {
+  from {
+    width: 100px;
+    background: yellow;
+  }
+  100% {
+    width: 200px;
+    background: pink;
+  }
+  /* to {
+    width: 100px;
+    background: yellow;
+  } */
+}
+
+/* 적용할 선택자에다가 기재 */
+.zoom .target-animation {
+  border: 5px solid currentColor;
+  padding: 10px;
+  width: 100px;
+  /* animation-name: zoom;
+  animation-duration: 5s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out; */
+  /* 애니메이션이 언제이후에 시작됐으면 좋겠는지를 delay를 이용하여 설정 */
+  animation-delay: 1s;
+  /* 어떤 모드로 애니메이션을 종료시킬것인지 결정. 기본값은 backwards(처음상태), forwards(종료상태), both(count에 따라 끝나는시점으로 유지) */
+  /* animation-fill-mode: forwards; */
+  /* 기본값 running(작동), paused(일시정지) */
+  /* animation-play-state: paused; */
+  /* 단축표기법(name, duration은 필수값) */
+  /* 기재순서 name, duration, delay 여기까진 필수순서. 이후로는 알아서 적으면 됨 */
+  animation: zoom 5s 1s 3 alternate ease-in-out forwards paused;
+}
+
+/* 공통 스타일(.case) */
+.case .target-animation {
+  border-radius: 8px;
+  padding: 1em;
+  font-size: 24px;
+  font-weight: 700;
+  background: var(--dark-blue);
+  color: var(--white);
+  text-align: center;
+  align-content: center;
+  margin-block: 15px;
+}
+
+/* Fade 애니메이션 */
+.fade .target-animation {
+  animation-name: fade;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+}
+
+/* Shrink 애니메이션 */
+.shrink .target-animation {
+  animation-name: shrink;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  /* animation-play-state: paused; */
+}
+
+/* Bounce 애니메이션 */
+.bounce .target-animation {
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  /* animation-play-state: paused; */
+}
+
+/* Shake 애니메이션 */
+.shake .target-animation {
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  /* animation-play-state: paused; */
+}
+
+/* Spin 애니메이션 */
+.spin .target-animation {
+  width: 120px;
+  /* 가로세로 동일비율(정사각형) */
+  aspect-ratio: 1;
+  /* background: conic-gradient(coral, lightgreen, yellow, pink, coral); */
+  /* 비율로 시작시점과 종료시점을 정해주면 해당 비율만큼 지정한 색이 나타남 */
+  background: conic-gradient(coral 0% 25%, pink 25% 50%, lightblue 50% 75%, lightyellow 75% 100%);
+  color: #4d4d4d;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  /* animation-play-state: paused; */
+}
+
+/* Pulse 애니메이션 */
+.pulse .target-animation {
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  /* animation-play-state: paused; */
+}
+
+/* Flip 애니메이션 */
+.flip .target-animation {
+  animation-name: flip;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  /* animation-play-state: paused; */
+}
+
+/* Wobble 애니메이션 */
+.wobble .target-animation {
+  animation-name: wobble;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  /* animation-play-state: paused; */
+}
+
+/* Rotate 애니메이션(CSS 변수활용) */
+.rotate .target-animation {
+  --rotation: 0deg;
+
+  inline-size: 120px;
+  aspect-ratio: 1;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    /* inset: 0; */
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    /* conic 에 from 이라고 기재한 부분은 첫번째 색상이 시작되는 위치(각도)임 */
+    background: conic-gradient(from var(--rotation), coral, lightgreen, yellow, pink, coral);
+    z-index: -1;
+    padding: 5px;
+    inline-size: 100%;
+    block-size: 100%;
+    box-sizing: content-box;
+    translate: -50% -50%;
+    border-radius: 0.5rem;
+
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    /* animation-play-state: paused; */
+  }
+}
+
+button {
+  border-radius: 4px;
+}
