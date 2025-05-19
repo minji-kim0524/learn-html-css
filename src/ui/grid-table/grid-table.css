@@ -1,0 +1,76 @@
+/* 그리드 테이블 */
+:root {
+  --white: #fffcf9;
+  --dark-black: #282725;
+
+  --size-13: 13px;
+}
+
+body {
+  margin: 50px;
+  background: var(--dark-black);
+  color: var(--white);
+}
+
+.grid-table {
+  /* border-top: 1px solid var(--white); */
+  /* border-bottom: 1px solid var(--white); */
+  border-block: 2px solid var(--white);
+  /* background: #333; */
+  margin-block: 1.25rem;
+  font-size: var(--size-13);
+  min-inline-size: 530px;
+  padding: 10px;
+  /* column-gap: 12px; */
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) minmax(max-content, 3fr) minmax(max-content, 1fr) minmax(max-content, 1fr);
+  /* grid-template-columns: repeat(4, minmax(min-content, 1fr)); */
+  grid-template-rows: repeat(3, 48px) auto;
+  /* align-items: center; */
+  /* min-inline-size: 590px;
+  inline-size: 100%;
+  block-size: 220px; */
+
+  dt,
+  dd,
+  > div {
+    border-bottom: 1px solid var(--white);
+    align-content: center;
+  }
+
+  /* grid-template-columns: 76px 200px 76px 120px; */
+  /* grid-template-rows: 48px 48px 48px 74px; */
+
+  /* background: var(--dark-black); */
+
+  dt:last-of-type {
+    /* background: darkblue; */
+    /* align-self: start; */
+    /* padding: 10px; */
+    margin-block: 10px;
+    border-bottom: 0;
+    align-content: start;
+  }
+
+  /* .last {
+    background: darkblue;
+  } */
+
+  /* dd:last-child,
+  div:last-child {
+    grid-row: 4 / 5;
+    grid-column: 2 / span 3;
+  } */
+
+  /* 위의 dd:last-child, div:last-child와 동일한 결과값을 도출해냄 */
+  :is(dd, div):last-child {
+    /* background: orange; */
+    grid-area: 4 / 2 / 5 / span 3;
+    border-bottom: 0;
+
+    span {
+      display: block;
+      margin-block: 10px;
+    }
+  }
+}
