@@ -46,3 +46,75 @@ body {
     }
   }
 }
+
+.food-01 {
+  container-type: inline-size;
+  background: yellow;
+  display: flex;
+  flex-flow: column nowrap;
+
+  img {
+    inline-size: 30%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    justify-content: center;
+  }
+
+  figcaption {
+    text-align: center;
+    font-style: italic;
+  }
+
+  p {
+    display: block;
+  }
+}
+
+/* 선생님 CSS */
+.card-wrapper {
+  container-type: inline-size;
+
+  .card {
+    background: #f9f9f9;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid gray;
+
+    @container (width >=480px) {
+      flex-direction: row;
+    }
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+    }
+
+    figcaption {
+      text-align: center;
+      font-style: italic;
+      margin-block-start: 8px;
+      font-weight: 600;
+    }
+
+    p {
+      line-height: 1.5;
+      /* 양쪽맞춤 */
+      text-align: justify;
+      color: gray;
+    }
+  }
+}
+
+/* 그리드 레이아웃 */
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  .card-wrapper:nth-child(n + 5) {
+    border: 1px solid red;
+    grid-column: span 2;
+  }
+}
