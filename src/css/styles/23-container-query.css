@@ -16,8 +16,13 @@ body {
     display: flex;
     flex-flow: column nowrap;
 
-    @container (width > 600px) {
+    @container (width >= 600px) {
       flex-direction: row;
+
+      div {
+        font-size: 2em;
+        color: white;
+      }
     }
 
     /* @media (width > 600px) {
@@ -28,7 +33,7 @@ body {
       block-size: 200px;
       text-align: center;
       align-content: center;
-      font-size: 2em;
+      /* font-size: 2em; */
       font-weight: 700;
     }
 
