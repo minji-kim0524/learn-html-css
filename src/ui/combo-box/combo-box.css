@@ -1,0 +1,89 @@
+/* 콤보박스 */
+body {
+  margin: 50px;
+}
+
+/* inline-grid를 활용한 combo-box UI */
+.combo-box {
+  /* background: yellow; */
+  /* inilne-grid는 블록개념이 아니라 컨텐츠(안에 있는 내용)개념으로 변경시킴 */
+  /* display: inline-grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 8px;
+  justify-items: center;
+  align-items: center;
+  inline-size: 75px;
+  position: relative;
+  isolation: isolate; */
+  /* padding-inline: 10px; */
+
+  /* border: 1px solid var(--gray-500); */
+
+  /* &:hover {
+    outline: 3px solid var(--green);
+  } */
+
+  /* .form-combo {
+    padding-inline: 10px;
+
+    select {
+      border-radius: 2px;
+      position: absolute;
+      translate: -40px -13px;
+      z-index: -1;
+
+      font-size: 16px;
+    }
+  } */
+}
+
+/* 선생님코드 */
+.combo-box {
+  /* background: goldenrod; */
+  display: inline-grid;
+  grid-template-columns: auto;
+  /* grid-template-columns: 16px auto 16px; */
+  align-items: center;
+  padding: 4px 12px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  isolation: isolate;
+
+  &:focus-within {
+    box-shadow: 0 0 0 2px green;
+  }
+
+  .global,
+  .arrow {
+    z-index: -1;
+
+    /* isolation: isolate 와 z-index: -1 대신해서 사용할 수 있음 */
+    /* pointer-events: none; */
+  }
+
+  .global,
+  .form-combo,
+  .arrow {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .global {
+    justify-self: start;
+  }
+
+  .form-combo {
+    /* z-index: -1; */
+
+    select {
+      outline: 0 none;
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 4px 20px;
+    }
+  }
+
+  .arrow {
+    justify-self: end;
+  }
+}
