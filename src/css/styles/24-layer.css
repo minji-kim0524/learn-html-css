@@ -3,7 +3,7 @@
 
 @layer module {
   body {
-    background-color: yellow !important;
+    background-color: skyblue;
   }
 
   .alert {
@@ -18,7 +18,11 @@
 
 @layer state {
   body {
-    background-color: pink !important;
+    background-color: pink;
+  }
+
+  h1 {
+    color: blue;
   }
 
   .alert {
@@ -33,9 +37,22 @@
 
 body {
   margin: 50px;
-  background: limegreen !important;
+  background: lightgray;
 }
 
 h1 {
   margin-block: 20px;
+  color: green;
+}
+
+p {
+  color: rebeccapurple;
+}
+
+@layer type {
+  .box p {
+    font-weight: 900;
+    font-size: 1.3em;
+    color: green;
+  }
 }
