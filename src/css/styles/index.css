@@ -1,0 +1,25 @@
+/* index 꾸미기 */
+body {
+  margin: 20px;
+  /* background:; */
+
+  h2 {
+    margin-inline: 10px;
+    margin-block: 0;
+  }
+}
+
+h1 {
+  color: red;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.group-html {
+  border: 2px solid green;
+  border-radius: 15px;
+  padding: 10px;
+}
